@@ -6,12 +6,20 @@ body{
 
 :root{
   --primary-white: #fff;
-  --primary-orange: #f9ab00;
+  --primary-orange: #f99500;
+  --primary-red: #FF0000;
+  --primary-maroon: #A52A2A;
+  --primary-hover-red: #f33501;
+  --primary-yellow: #FFFF00; 
   --primary-dark: rgba(255,255,255, 0)
+  
 
 }
 
 /*********************** NAVBAR ************************/
+nav{
+  z-index: 2;
+}
 .Logo{
   width: 10rem;
 }
@@ -47,4 +55,83 @@ nav ul li{
 
 .navbar-nav > li > a:hover {
   border-top: 0.1875rem solid var(--primary-orange);
+}
+
+/*********************** HEADER ************************/
+
+.header-wraper {
+  position: relative;
+  background: url(Background.gif) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: luminosity;
+   /* also change the blend mode to what suits you, from darken, to other 
+    many options as you deem fit*/
+  height: 90vh;
+}
+.main-info {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Roboto Condensed" sans-serif;
+  z-index: 1;
+}
+.main-info h1 {
+  font: "Abril Fatface";
+  text-transform: uppercase;
+  color: var(--primary-white);
+  outline-color: solid var(--primary-dark);
+}
+
+/*------------- TYPED TEXT -----------*/
+.typed-text {
+  font-size: 2rem;
+  color: var(--primary-yellow);
+}
+
+
+@media(max-width: 768px) {
+  .main-info h1: {
+    font-size: 1.7rem !important;
+  }
+  .typed-text {
+    font-size: 1.3rem !important;
+  }
+}
+/*------------- HEADER MAIN OFFER BUTTON -----------*/
+.btn-main-offer {
+  border: 1px solid var(--primary-white);
+  text-transform: uppercase;
+  border-radius: 0;
+  padding: 0.625rem 0.75rem 0.75rem 0.75rem;
+  color: var(--primary-white);
+  margin: 2rem;
+}
+
+.btn-main-offer:hover {
+  text-decoration: none;
+  background-color: var(--primary-hover-red);
+  color: var(--primary-white);
+  transition: .2s ease-in-out;
+}
+
+/*------------- PARTICLES JS -----------*/
+.tsparticles-canvas-el{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+@media(max-width: 768px) {
+  .particles-canvas {
+    display: none;
+  }
 }
